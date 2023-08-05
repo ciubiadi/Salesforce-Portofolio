@@ -2,17 +2,12 @@ import { LightningElement, track } from 'lwc';
 
 export default class HelloWorld extends LightningElement {
     fullname = 'Adrian Albert Ciubucciu'
-    users = ["a", "b"]
     obj={
         name: 'obj name',
         age: 20
     }
     title="LWC Course"
-    // @track address={
-    //     city: 'Galati',
-    //     postcode: 800800,
-    //     country: 'Romania'
-    // }
+
      address={
         city: 'Galati',
         postcode: 800800,
@@ -20,13 +15,11 @@ export default class HelloWorld extends LightningElement {
     }
     // @track userList=["a", "b", "c"]
 
-    //call the method in the class trough the lifecycle hook
-
-    //method
-    // getName(){
-    //     //perform my logic
-    //     console.log('this.fullname');
-    //     console.log(this.fullname);
+    /**** Mutate data with @track | @track binding example****/ 
+    // @track address={
+    //     city: 'Galati',
+    //     postcode: 800800,
+    //     country: 'Romania'
     // }
 
     changeHandler(event){
@@ -34,8 +27,19 @@ export default class HelloWorld extends LightningElement {
     }
 
     trackHandler(e) {
-        // this.address = e.target.value;
         this.address = {...this.address, 'city': e.target.value};
-        // this.userList[0] = '';
+    }
+
+    /*** Getter example  ***/
+    users = ['John', 'Smith', 'Nick'];
+    num1 = 25;
+    num2 = 3;
+
+    get firstUser(){
+        return this.users[0].toUpperCase();
+    }
+    
+    get sumOfNums(){
+        return this.num1 + this.num2;
     }
 }
