@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, track } from 'lwc';
 
 export default class HelloWorld extends LightningElement {
     fullname = 'Adrian Albert Ciubucciu'
@@ -8,6 +8,17 @@ export default class HelloWorld extends LightningElement {
         age: 20
     }
     title="LWC Course"
+    // @track address={
+    //     city: 'Galati',
+    //     postcode: 800800,
+    //     country: 'Romania'
+    // }
+     address={
+        city: 'Galati',
+        postcode: 800800,
+        country: 'Romania'
+    }
+    // @track userList=["a", "b", "c"]
 
     //call the method in the class trough the lifecycle hook
 
@@ -20,5 +31,11 @@ export default class HelloWorld extends LightningElement {
 
     changeHandler(event){
         this.title = event.target.value;
+    }
+
+    trackHandler(e) {
+        // this.address = e.target.value;
+        this.address = {...this.address, 'city': e.target.value};
+        // this.userList[0] = '';
     }
 }
