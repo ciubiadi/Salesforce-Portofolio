@@ -9,12 +9,43 @@
         </div>
     </lightning-card>
 
+    <lightning-card  title="Template Looping with array of objects">
+        <div class="slds-var-m-around_medium">
+            <template for:each={userList} for:item="userItem">
+                <ul class="slds-has-dividers_around-space" key={userItem.id}>
+                    <li class="slds-item"><strong>{userItem.name}</strong> {userItem.email}</li>
+                  </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <!-- USING ITERATOR -->
     <lightning-card  title="Iterator Loop">
         <div class="slds-var-m-around_medium">
-            <template for:each={productsList} for:item="product">
-                <ul class="slds-has-dividers_around-space" key={product}>
-                    <li class="slds-item">{product}</li>
-                  </ul>
+            <template iterator:user={userList} >
+                <div key={user.value.id}>
+                    <ul class="slds-has-dividers_around-space">
+                        <template if:true={user.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    List of users and their emails
+                                </strong>
+                            </div>
+                        </template>
+                        
+                        <li class="slds-item">
+                            <strong>{user.value.name}</strong> {user.value.email}
+                        </li>
+
+                        <template if:true={user.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    Thanks for reading the list
+                                </strong>
+                            </div>
+                        </template>
+                    </ul>
+                </div>
             </template>
         </div> 
     </lightning-card>
