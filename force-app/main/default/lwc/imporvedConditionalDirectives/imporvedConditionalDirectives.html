@@ -1,0 +1,25 @@
+<template>
+    <lightning-card  title="Favourite Salesforce Cloud">
+        <div class="slds-m-around_medium">
+            <lightning-radio-group 
+                name="favouriteCloud"
+                label="Choose your favourite Salesforce Cloud"
+                options={options}
+                value={value}
+                type="radio"
+                onchange={changeHandler}>
+            </lightning-radio-group>
+        </div>
+        <div class="slds-m-around_medium">
+            <template lwc:if={choosedSales}>
+                Statement 1
+            </template>
+            <template lwc:elseif={choosedService}>
+                Statement 2
+            </template>
+            <template lwc:else>
+                No option is selected yet!
+            </template>
+        </div>
+    </lightning-card>
+</template>
