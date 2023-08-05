@@ -1,0 +1,21 @@
+<template>
+    <lightning-card  title="Template Looping">
+        <div class="slds-var-m-around_medium">
+            <template for:each={productsList} for:item="product">
+                <ul class="slds-has-dividers_around-space" key={product}>
+                    <li class="slds-item">{product}</li>
+                  </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card  title="Iterator Loop">
+        <div class="slds-var-m-around_medium">
+            <template for:each={productsList} for:item="product">
+                <ul class="slds-has-dividers_around-space" key={product}>
+                    <li class="slds-item">{product}</li>
+                  </ul>
+            </template>
+        </div> 
+    </lightning-card>
+</template>

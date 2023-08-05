@@ -22,3 +22,29 @@ framework to observe changes to the properties of an object or to the elements o
 Normal Property vs @track property
 Without using @track, the framework observes changes that assign a new value to a field/property. If the new value is 
 not === to the previousvalue, the component re-renders.!!!
+
+
+==============
+Regarding Template Looping 
+- The Key must be a number or string, it can not be an object. I can not use the index as a value for the key!
+
+Iterator Looping
+<template iterator=iteratorName={array}>
+</template>
+
+iterator = It is a keyword to tell template that it is an iterator Looping
+iteratorName = It is the value of the current element in the loop. It is an alias and can be anyname
+array = It is the data on which I want to apply loop
+
+Properties of iterator
+value = The value of the item in the list. I will use this property to access the properties of the array
+For example: iteratorName.value.propertyName
+
+index = The index of the item in the list. 
+For example: iteratorName.index
+
+first = A boolean value indicating whether this item is the first item in the list
+Fir example: iteratorName.first
+
+last = A boolean value indicating whether this item is the last item in the list.
+For example: iteratorName.last
