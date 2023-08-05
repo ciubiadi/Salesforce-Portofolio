@@ -3,3 +3,6 @@ Scratch Org = It is a source-driven and disposable deployment of Salesforce code
 source, Sandboxes and copies of production.
 
 Scratch orgs do not replace sandboxes!!
+
+- A very usefull resource is developer.salesforce.com for components designed already. like card
+- A very usefull resource for styling is https://www.lightningdesignsystem.com/

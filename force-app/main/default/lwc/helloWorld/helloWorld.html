@@ -4,9 +4,20 @@
         <p>Access obj name property : {obj.name}</p>
         <p>Call the method in html : {getName}</p>
     </div> -->
-    <div>
-        <label for="title">Title</label>
-        <input id="title" name="title" type="text" onkeyup={changeHandler} />
-        <p>{fullname} is a participant in the course of {title}</p>
-    </div>
+
+    <lightning-card  title="Hello">
+        <div class="slds-m-around_medium">
+            <!-- <label for="title">Title</label> -->
+            <!-- <div class="slds-p-around_medium lgc-bg"> -->
+            <lightning-input 
+                type="text" 
+                id="title" 
+                name="title" 
+                onkeyup={changeHandler}  
+                label="Enter some text">
+            </lightning-input>
+            <!-- </div> -->
+            <p class="">{fullname} is a participant in the course of <span class="entered-text">{title}</span></p>
+        </div>
+    </lightning-card>
 </template>
