@@ -1,0 +1,5 @@
+Dev Hub = It is the main Salesforce org that I will use to create and manage my scratch orgs
+Scratch Org = It is a source-driven and disposable deployment of Salesforce code and metadata. Scratch Orgs are driven by 
+source, Sandboxes and copies of production.
+
+Scratch orgs do not replace sandboxes!!
