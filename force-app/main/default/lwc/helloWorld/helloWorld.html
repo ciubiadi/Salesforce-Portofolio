@@ -1,5 +1,12 @@
 <template>
+    <!-- <div>
+        <p>Full name is {fullname}</p>
+        <p>Access obj name property : {obj.name}</p>
+        <p>Call the method in html : {getName}</p>
+    </div> -->
     <div>
-        <p>Finally my first LWC component working</p>
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" onkeyup={changeHandler} />
+        <p>{fullname} is a participant in the course of {title}</p>
     </div>
 </template>
