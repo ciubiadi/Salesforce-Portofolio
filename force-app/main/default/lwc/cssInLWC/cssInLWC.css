@@ -1,0 +1,12 @@
+/* element, classes, pseudo */
+p {
+    color: pink;
+
+}
+.hero {
+    color:darkgray;
+}
+.hero:hover{
+    color: darkblue;
+    font-weight: bolder;
+}

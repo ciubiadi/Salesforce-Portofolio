@@ -48,3 +48,19 @@ Fir example: iteratorName.first
 
 last = A boolean value indicating whether this item is the last item in the list.
 For example: iteratorName.last
+
+
+================ SHADOQW DOM ================
+In the parent DOM I can access anything but in the child component I can't access the properties or css of the parent
+component. The parent component is the main DOM and the child compoinent is the Shadow DOM.
+
+====== Accessing Elements in the Component ======
+To access elements rendered by a component use template property.
+this.template.querySelector(selector);
+this.template.querySel;ectorAll(selector);
+element.template.querySelectorAll(selector);
+
+Don't use ID selector with queryESelector!
+
+*** lwc:dom=manual" ***
+Add this directive to a native HTML element to attach an HTML element as a achild

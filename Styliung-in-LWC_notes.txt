@@ -1,0 +1,13 @@
+CSS in lwc
+1. Inline styling
+2. External CSS
+3. Using Lightning Design System
+4. SLDS Design Token
+5. Shared S+CSS in lwc
+6. Dynamic Styling
+7. Third-party css library
+8. Applying CSS acroiss shadow DOM
+
+********** Lightning Design System **********
+The Salesforce Lightning Design System inludes the resources to create user interfaces consistent with the Salesforce
+Lightning principles, design language, and best practices.
