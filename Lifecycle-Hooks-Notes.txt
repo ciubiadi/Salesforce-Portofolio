@@ -12,20 +12,53 @@ There are 3 types of phase in my component lifecycle :
 2. Unmounting phase
 3. Error phase
 
-========== Mountin Phase ==========
+
+======================================== MOUNTING PHASE ========================================
 Methods : 
-1) constructor()
-2) connectedCallback()
-3) render() 
-4) renderedCallback()
+- constructor()
+- connectedCallback()
+- render() 
+- renderedCallback()
 
 Technically the render() method is not a lifecycle hook, it is a protected method on the lightning element class.
 
+--- constructor METHOD ---
+*) Is invoked, when a component instance is created.
+*) I have to call super() first inside this
+*) At this point, the component properties won't be ready yet.
+*) To access the host element, use this.template
+*) This method lifecycle flows from Parent to Child component
+*) I can't access child elements in the component body because they don't exist yet,
+*) Don't add attribute to the host element in the constructor
 
-========== Mountin Phase ==========
+--- connectedCallback METHOD ---
+*) Called when the element is inserted into a document
+*) This hook flows from parent to child
+*) I can not access child elements in the component body because they don't exist yet
+*) I can access the host element with this.template!!!
+*) use it to: Perform initialization tasks, such as fetch data, set up caches, or listen for events ( such as publish-
+subscribe events)
+*) do NOT use: connectedCallback() to change the state of a component, such as loading values or setting properties.
+I should use GETTERS and SETTERS instead!!!
+
+--- connectedCallback METHOD ---
+*) Fires when a component rendering is done
+*) It can fire more than once
+*) This hook flows from a child to parent
+*) When a component re-renders, all the expressions used in the template are reevaluated
+ Do not use renderedCallback() :
+ - to change the state or update property of a component
+ - Don't update a wire adapter configuration object property in this method, as it can result in an infinite loop 
+
+
+
+======================================== UNMOUNTING PHASE ========================================
 Whenever my component is removing from DOM, that time this phase occur. It has only 1 method : disconnectedCallback()
+*) Fires when a component is removed from the DOM
+*) It flows from parent to child
+*) This callback method is specific to LWC, it isn't from the HTML custom elements specification.
 
 
-========== Mountin Phase ==========
+======================================== ERROR PHASE ========================================
 Whenever any of my callback of lifecycle hook throws an error, an error phase occurs. To catch that error I use the 
 errorCallback() method.
