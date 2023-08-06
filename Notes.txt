@@ -51,8 +51,9 @@ For example: iteratorName.last
 
 
 ================ SHADOQW DOM ================
-In the parent DOM I can access anything but in the child component I can't access the properties or css of the parent
-component. The parent component is the main DOM and the child compoinent is the Shadow DOM.
+Shadow DOM is a JavaScript feature that encapsulates the HTML, CSS, and JavaScript to be scoped. 
+Shadow DOM is the browser's ability to include a subtree of DOM elements into the rendering of a document, 
+but not into the main document DOM tree.
 
 ====== Accessing Elements in the Component ======
 To access elements rendered by a component use template property.
