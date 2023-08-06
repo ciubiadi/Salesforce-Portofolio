@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="Quizz App in LWC">
+        <div class="slds-form slds-var-m-around_medium">
+            <form>
+                <template for:each={questionsList} for:item="question">
+                    <fieldset class="slds-form-element" key={question.id}>
+                        <legend class="slds-form-element__legend slds-form-element__label">
+                            <strong>{question.id}. {question.question}</strong> 
+                        </legend>
+                        <div class="slds-form-element__control">
+                            <span class="slds-radio">
+                                <input type="radio" id={question.answers.a} value="a" name={question.id} onchange={changeHandler} />
+                                <label class="slds-radio__label" for={question.answers.a}>
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">{question.answers.a}</span>
+                                </label>
+                            </span>
+                            <span class="slds-radio">
+                                <input type="radio" id={question.answers.b} value="b" name={question.id} onchange={changeHandler} />
+                                <label class="slds-radio__label" for={question.answers.b}>
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">{question.answers.b}</span>
+                                </label>
+                            </span>
+                            <span class="slds-radio">
+                                <input type="radio" id={question.answers.c} value="c" name={question.id} onchange={changeHandler} />
+                                <label class="slds-radio__label" for={question.answers.c}>
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">{question.answers.c}</span>
+                                </label>
+                            </span>
+                        </div>
+                    </fieldset>
+                </template>
+                <div class="slds-m-top_small">
+                    <lightning-button 
+                        disabled={allNotSelected}
+                        variant="brand" 
+                        type="submit" 
+                        label="Submit" 
+                        title="Submit Quiz"
+                        onclick={submitHandler}></lightning-button>
+                    <lightning-button 
+                        variant="neutral" 
+                        type="reset" 
+                        label="Reset"
+                        title="Reset Quiz" 
+                        class="slds-button_neutral"
+                        onclick={resetHandler}></lightning-button>
+                </div>
+            </form>
+        </div>
+
+        <template if:true={isSubmitted}>
+            <div class={scoredMessageStyle}>
+                You have Scored {numberOfCorrectAnswers} out of {questionsList.length}
+            </div>
+         </template>
+    </lightning-card>
+</template>
