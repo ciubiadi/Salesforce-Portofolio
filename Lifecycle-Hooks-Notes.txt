@@ -1,4 +1,4 @@
-*************************** LIFECYCLE HOOKS ***************************
+****************************************************** LIFECYCLE HOOKS *********************************************=*****
 A JavaScript callback is a function which is to be executed after another function has finished execution.
 A more formal definition would be - Any function that is passed as an argument to another function so that
  it can be executed in that other function is called as a callback function
@@ -11,6 +11,7 @@ There are 3 types of phase in my component lifecycle :
 1. Mounting phase
 2. Unmounting phase
 3. Error phase
+
 
 
 ======================================== MOUNTING PHASE ========================================
@@ -50,6 +51,13 @@ I should use GETTERS and SETTERS instead!!!
  - to change the state or update property of a component
  - Don't update a wire adapter configuration object property in this method, as it can result in an infinite loop 
 
+ ---------------------------------- render Method ----------------------------------
+ Render is a method that tells the component which template to load based on some conditions. It always return the 
+ template reference
+ *) The render() method is not technically a lifecycle hook. It is a protected method on the LightningElement class.
+ *) Call this method to update the UI. It may be called before or after connectedCallback();
+ *) It's rare to call render() in a component. The main use case is to conditionally render a template.
+
 
 
 ======================================== UNMOUNTING PHASE ========================================
@@ -57,6 +65,7 @@ Whenever my component is removing from DOM, that time this phase occur. It has o
 *) Fires when a component is removed from the DOM
 *) It flows from parent to child
 *) This callback method is specific to LWC, it isn't from the HTML custom elements specification.
+
 
 
 ======================================== ERROR PHASE ========================================
