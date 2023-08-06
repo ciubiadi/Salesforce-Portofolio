@@ -29,4 +29,9 @@ export default class LifecycleParent extends LightningElement {
     }
 
     /***** UNMOUNTING PHASE *****/
+    errorCallback(error, stack){
+        console.log('************ ERROR PHASE ************');
+        console.log(error.message);
+        console.log(stack);
+    }
 }

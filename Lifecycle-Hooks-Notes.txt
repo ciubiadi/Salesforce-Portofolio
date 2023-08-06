@@ -62,3 +62,7 @@ Whenever my component is removing from DOM, that time this phase occur. It has o
 ======================================== ERROR PHASE ========================================
 Whenever any of my callback of lifecycle hook throws an error, an error phase occurs. To catch that error I use the 
 errorCallback() method.
+
+*) This method called when a descendant component throws an error in one of its callback.
+*) The error argument is a JavaScript native error object, and the stack argument is a string
+*) This callback method is specific to LWC, it isn't from the HTML custom elements specification

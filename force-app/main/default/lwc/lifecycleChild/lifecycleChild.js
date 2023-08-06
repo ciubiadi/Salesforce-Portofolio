@@ -11,8 +11,10 @@ export default class LifecycleChild extends LightningElement {
 
     connectedCallback(){
         console.log('Child connectedCallback called!');
-        window.addEventListener('click', this.handleClick);
-        thos.interval = window.setInterval();
+        // window.addEventListener('click', this.handleClick);
+        // this.interval = window.setInterval();
+
+        throw new Error('Loading of Child Component failed')
     }
 
     renderedCallback(){
@@ -21,10 +23,10 @@ export default class LifecycleChild extends LightningElement {
 
     /***** UNMOUNTING PHASE *****/
     // setTune abd setInterval can be cleared in this method of Unounting Phase
-    disconnectedCallback(){
+    disconnectedCallback(){ 
         console.log('Child disconnected')
         alert('Child disconnectedCallback called!!!');
-        window.removeEventListener('click', this.handleClick);
-        window.clearInterval(this.interval);
+        // window.removeEventListener('click', this.handleClick);
+        // window.clearInterval(this.interval);
     }
 }
