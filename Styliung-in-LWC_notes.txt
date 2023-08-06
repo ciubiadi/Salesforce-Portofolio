@@ -11,3 +11,5 @@ CSS in lwc
 ********** Lightning Design System **********
 The Salesforce Lightning Design System inludes the resources to create user interfaces consistent with the Salesforce
 Lightning principles, design language, and best practices.
+
+This library doesn't need to be imported, is inbuilt inside the Salesforce system.
