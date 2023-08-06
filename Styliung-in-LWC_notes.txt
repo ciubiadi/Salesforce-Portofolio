@@ -15,4 +15,5 @@ Lightning principles, design language, and best practices.
 This library doesn't need to be imported, is inbuilt inside the Salesforce system.
 
 
-********** Design Tokens **********
+********** Shared CSS in LWC **********
+When I need to write the same css for different components that share the same css, I can use the Shared CSS concept.
