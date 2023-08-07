@@ -17,6 +17,11 @@ export default class P2cParentComponent extends LightningElement {
             header: "Third Card",
             description: "Third card description.",
         }
-
     ]
+
+    percentage = 10;
+
+    onKeyUpHandler(e){
+        this.percentage = e.target.value;
+    }
 }
