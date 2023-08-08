@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Chil to parent communication">
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="Show Modal" onclick={toggleModal}></lightning-button>
+            <template if:true={showModal}>
+                <c-c2p-modal-component onclosemodal={toggleModal}></c-c2p-modal-component>
+            </template>
+        </div>
+    </lightning-card>
+</template>
