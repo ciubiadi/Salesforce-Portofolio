@@ -1,0 +1,4 @@
+******************** SETTER METHOD ******************** 
+- This method is use to modfied the data coming from parent component. If Object is passed as data to setter,
+to mutate hte object IO have to create a shallow copy.
+
