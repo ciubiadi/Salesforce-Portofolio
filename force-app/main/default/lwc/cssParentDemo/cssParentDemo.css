@@ -1,0 +1,17 @@
+h1 {
+    font-size: 30px;
+    color: red;
+}
+
+/* apply style to the host element */
+/* c-css-child-demo{
+    display: block;
+    background-color: green;
+    color: white;
+} */
+
+/*  since is the parent component, I was able to apply the styling */
+p{
+    font-size: 20px;
+    color:yellow;
+}

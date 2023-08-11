@@ -1,0 +1,17 @@
+:host{
+    display: block;
+    background-color: red;
+    color: white;
+}
+
+:host(.blue){
+    display: block;
+    background-color: blue;
+    color: white;
+}
+
+/* Since I can style a element pass into the slot from the parent only, this p style will not work  */
+/* p{
+    font-size:20px;
+    color: yellow;
+} */

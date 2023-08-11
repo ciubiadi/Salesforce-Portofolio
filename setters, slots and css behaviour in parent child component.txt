@@ -12,3 +12,11 @@ to mutate hte object IO have to create a shallow copy.
 There are 2 types of Slots :
 1. Named Slots : When name attribute is defined in slot element ( <slot name="user"></slot> )
 2. Unnamed Slots : When a slot without a name attribute <slot></slot>
+
+
+
+******************** CSS BEHAVIOUR IN PARENT CHILD COMPONENT ******************** 
+1. Parent CSS can't reach into a child component
+2. A parent component CSS can style a host element(<c-css-child>)
+3. A Child Component CSS can reach up and style its own host element
+4. I can style to a element pass into the slot form the parent component only.
