@@ -2,3 +2,13 @@
 - This method is use to modfied the data coming from parent component. If Object is passed as data to setter,
 to mutate hte object IO have to create a shallow copy.
 
+
+
+******************** PASSING MARKUP INTO SLOTS ******************** 
+*) Slot is userful to [ass HTML markup into the another component
+*) <slot></slot> markup is used to catch the HTML passed by parent component
+*) I can't pass an Aura component into a slot
+
+There are 2 types of Slots :
+1. Named Slots : When name attribute is defined in slot element ( <slot name="user"></slot> )
+2. Unnamed Slots : When a slot without a name attribute <slot></slot>
